@@ -6,6 +6,7 @@ taxonomy:
   category: Coche
   tag:
     - Moto
+tags: Split training
 ---
 Test body
 
