@@ -1,11 +1,25 @@
 <template>
   <div>
-    <h1>titulo de la home</h1>
-    <li v-for="post of posts" :key="post.slug">
-      <NuxtLink :to="post.slug">
-        {{ post.title }}
-      </NuxtLink>
-    </li>
+    <div class="intro">
+      <img class="intro__bg" :src="intro.image" alt="">
+      <div class="intro__container container">
+        <div class="intro__box">
+          <h1>{{ intro.title }}</h1>
+          <h2>{{ intro.description }}</h2>
+          <nuxt-content :document="intro" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Blog</h2>
+      <ul>
+        <li v-for="post of posts" :key="post.slug">
+          <NuxtLink :to="post.slug">
+            {{ post.title }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -13,8 +27,10 @@
 export default {
   async asyncData ({ $content }) {
     const posts = await $content('blog').fetch()
+    const intro = await $content('home/intro').fetch()
 
     return {
+      intro,
       posts
     }
   },
@@ -27,42 +43,31 @@ export default {
 </script>
 
 <style>
+.intro {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.intro__bg {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro__container {
+  position: relative;
+  z-index: 2;
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
 .container {
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  width: 100%;
+  max-width: 600px;
 }
 </style>
