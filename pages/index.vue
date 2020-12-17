@@ -56,6 +56,7 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
 }
 
 .intro__container {
@@ -63,6 +64,7 @@ export default {
   z-index: 2;
   padding-top: 104px;
   padding-bottom: 104px;
+  color: #fff;
 }
 
 .container {
