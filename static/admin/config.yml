@@ -1,5 +1,5 @@
 backend:
-  name: brave-visvesvaraya-cb9d6f
+  name: git-gateway
   branch: master
 
 media_folder: static/img
