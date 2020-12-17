@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Title intro
 description: Empower your NuxtJS application
 image: /img/banner-img.png
 ---
