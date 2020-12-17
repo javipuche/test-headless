@@ -34,7 +34,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { name: 'title', widget: 'string' }
+      - { label: 'Name', name: 'name', widget: 'string' }
 
 
   - name: 'home'
