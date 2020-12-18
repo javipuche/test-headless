@@ -1,6 +1,6 @@
 ---
 title: Title intro
-description: Empower your NuxtJS application
+description: landing Hero
 image: /img/banner-img.png
 ---
 
