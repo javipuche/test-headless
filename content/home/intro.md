@@ -1,6 +1,6 @@
 ---
-title: Title intro
-description: landing Hero
+title: Landing Hero
+description: Landing Hero
 image: /img/banner-img.png
 ---
 
